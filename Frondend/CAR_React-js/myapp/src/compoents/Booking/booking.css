@@ -1,0 +1,667 @@
+/* BMW Booking Form - Premium Luxury Design */
+.booking-container {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 75%, #0a0a0a 100%);
+  overflow: hidden;
+  font-family: 'Arial', 'Helvetica Neue', sans-serif;
+}
+
+/* Animated Background Effects */
+.booking-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(0, 122, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 85% 80%, rgba(255, 255, 255, 0.05) 0%, transparent 40%),
+    linear-gradient(45deg, transparent 40%, rgba(0, 122, 255, 0.02) 50%, transparent 60%);
+  animation: backgroundFlow 15s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes backgroundFlow {
+  0%, 100% { opacity: 1; transform: translateX(0) translateY(0) rotate(0deg); }
+  50% { opacity: 0.8; transform: translateX(10px) translateY(-10px) rotate(1deg); }
+}
+
+/* Floating Particles */
+.booking-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(2px 2px at 40% 70%, rgba(0, 122, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 90% 40%, rgba(255, 255, 255, 0.2), transparent),
+    radial-gradient(1px 1px at 60% 10%, rgba(255, 255, 255, 0.1), transparent);
+  background-size: 250px 250px, 180px 180px, 120px 120px, 200px 200px;
+  animation: particleFloat 20s linear infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes particleFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+    opacity: 1;
+  }
+  50% { 
+    transform: translateY(-15px) rotate(180deg);
+    opacity: 0.6;
+  }
+}
+
+/* Form Section */
+.form-section {
+  position: relative;
+  flex: 1.2;
+  padding: 4rem 3rem;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(20px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 3;
+  overflow-y: auto;
+  animation: slideInLeft 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.form-section h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  margin: 0 0 1rem 0;
+  background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 50%, #ffffff 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: titleShimmer 3s ease-in-out infinite;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.form-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #007AFF, #00D4FF);
+  animation: underlineGrow 1s ease-out 0.5s forwards;
+}
+
+@keyframes underlineGrow {
+  to { width: 80px; }
+}
+
+@keyframes titleShimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.form-section p {
+  color: #b0b0b0;
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 0.7s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Styling */
+form {
+  opacity: 0;
+  animation: formSlideIn 1s ease-out 1s forwards;
+}
+
+@keyframes formSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-group {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.form-group label {
+  display: block;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* Premium Input Styling */
+.form-group select,
+.form-group input {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.form-group select:focus,
+.form-group input:focus {
+  outline: none;
+  border-color: #007AFF;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 0 0 3px rgba(0, 122, 255, 0.2),
+    inset 0 2px 4px rgba(0, 0, 0, 0.1),
+    0 8px 25px rgba(0, 122, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.form-group input::placeholder {
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.form-group input:focus::placeholder {
+  color: #aaa;
+}
+
+/* Floating Label Effect */
+.form-group {
+  position: relative;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+  transform: translateY(-25px) scale(0.8);
+  color: #007AFF;
+}
+
+/* Select Dropdown Styling */
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  cursor: pointer;
+}
+
+.form-group select:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Checkbox Styling */
+.form-check {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.form-check label {
+  display: flex;
+  align-items: flex-start;
+  color: #b0b0b0;
+  font-size: 1rem;
+  line-height: 1.5;
+  cursor: pointer;
+  margin: 0;
+  text-transform: none;
+}
+
+.form-check input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  margin-right: 0.8rem;
+  margin-top: 2px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.form-check input[type="checkbox"]:checked {
+  background: linear-gradient(135deg, #007AFF, #00D4FF);
+  border-color: #007AFF;
+  transform: scale(1.1);
+}
+
+.form-check input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.form-check input[type="checkbox"]:hover {
+  border-color: #007AFF;
+  box-shadow: 0 0 10px rgba(0, 122, 255, 0.3);
+}
+
+.form-check a {
+  color: #007AFF;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.form-check a:hover {
+  color: #00D4FF;
+  text-decoration: underline;
+}
+
+/* Premium Submit Button */
+.submit-btn {
+  width: 100%;
+  padding: 1.2rem 2rem;
+  background: linear-gradient(135deg, #007AFF 0%, #005bb5 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  box-shadow: 
+    0 15px 35px rgba(0, 122, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  margin-top: 2rem;
+}
+
+.submit-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.3), 
+    transparent);
+  transition: left 0.6s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 
+    0 25px 50px rgba(0, 122, 255, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  background: linear-gradient(135deg, #0056b3 0%, #007AFF 100%);
+}
+
+.submit-btn:hover::before {
+  left: 100%;
+}
+
+.submit-btn:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* Image Section */
+.image-section {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  z-index: 3;
+  animation: slideInRight 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s forwards;
+  opacity: 0;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.image-section img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  filter: brightness(1.1) contrast(1.2) saturate(1.3);
+  animation: imageFloat 6s ease-in-out infinite;
+}
+
+@keyframes imageFloat {
+  0%, 100% { transform: translateY(0px) scale(1); }
+  50% { transform: translateY(-10px) scale(1.02); }
+}
+
+.image-section img:hover {
+  transform: translateY(-15px) scale(1.05) rotateY(5deg);
+  box-shadow: 
+    0 50px 100px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    0 0 100px rgba(0, 122, 255, 0.3);
+  filter: brightness(1.2) contrast(1.3) saturate(1.4);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .booking-container {
+    flex-direction: column;
+  }
+  
+  .form-section {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 3rem 2rem;
+  }
+  
+  .image-section {
+    padding: 2rem;
+  }
+  
+  .form-section h2 {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .form-section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .image-section {
+    padding: 1.5rem;
+  }
+  
+  .form-group select,
+  .form-group input {
+    padding: 0.8rem 1.2rem;
+    font-size: 0.9rem;
+  }
+  
+  .submit-btn {
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .image-section {
+    padding: 1rem;
+  }
+  
+  .form-section h2 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+  
+  .form-group select,
+  .form-group input {
+    padding: 0.7rem 1rem;
+  }
+  
+  .submit-btn {
+    padding: 0.9rem 1.2rem;
+    font-size: 1rem;
+  }
+}
+
+/* Loading Animation for Form Submission */
+.submit-btn.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.submit-btn.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Success State */
+.submit-btn.success {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+}
+
+.submit-btn.success::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: white;
+}
+
+
+
+
+
+/* Select Dropdown Styling with Colored Options */
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1em;
+  cursor: pointer;
+  color: #ffffff; /* Main select text color */
+}
+
+.form-group select:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+/* Style the select options */
+.form-group select option {
+  background-color: #1a1a1a; /* Dark background for options */
+  color: #ffffff; /* White text for options */
+  padding: 8px 12px;
+  border: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Default/placeholder option styling */
+.form-group select option[value=""] {
+  background-color: #2a2a2a;
+  color: #888888; /* Gray color for placeholder */
+  font-style: italic;
+}
+
+/* Hover effect for options (works in some browsers) */
+.form-group select option:hover {
+  background-color: #007AFF !important;
+  color: #ffffff !important;
+}
+
+/* Selected option styling */
+.form-group select option:checked {
+  background-color: #007AFF;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Enhanced focus state for better visibility */
+.form-group select:focus {
+  outline: none;
+  border-color: #007AFF;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 0 0 3px rgba(0, 122, 255, 0.2),
+    inset 0 2px 4px rgba(0, 0, 0, 0.1),
+    0 8px 25px rgba(0, 122, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Alternative approach for better browser compatibility */
+.form-group select {
+  /* Custom dropdown arrow with better contrast */
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23007AFF' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+.form-group select::-webkit-scrollbar {
+  width: 8px;
+}
+
+.form-group select::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.form-group select::-webkit-scrollbar-thumb {
+  background: #007AFF;
+  border-radius: 4px;
+}
+
+.form-group select::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+}
+
+/* For Firefox */
+.form-group select {
+  scrollbar-width: thin;
+  scrollbar-color: #007AFF #1a1a1a;
+}
+
+/* Additional styling for better option visibility */
+@media (prefers-color-scheme: dark) {
+  .form-group select option {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .form-group select option[value=""] {
+    background-color: #0a0a0a;
+    color: #666666;
+  }
+}
+
+/* Custom select wrapper for even more control (optional enhancement) */
+.custom-select-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.custom-select-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 8px solid #007AFF;
+  pointer-events: none;
+  transition: transform 0.3s ease;
+}
+
+.custom-select-wrapper:hover::after {
+  border-top-color: #00D4FF;
+}
+
+.custom-select-wrapper select:focus + .custom-select-wrapper::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+/* Improved select for better cross-browser option styling */
+.form-group select.enhanced-select {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(0, 122, 255, 0.3);
+  color: #ffffff;
+}
+
+.form-group select.enhanced-select option {
+  background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+  color: #ffffff;
+  padding: 10px 15px;
+}
+
+.form-group select.enhanced-select option[value=""] {
+  background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+  color: #888888;
+  font-style: italic;
+}
+
+.form-group select.enhanced-select option:checked {
+  background: linear-gradient(145deg, #007AFF, #0056b3);
+  color: #ffffff;
+}

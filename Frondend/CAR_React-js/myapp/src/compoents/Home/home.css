@@ -1,0 +1,1115 @@
+/* home.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #111;
+  background: #fff;
+}
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide-background {
+  display: none;
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.slide-background.active {
+  display: block;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.background-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  z-index: 2;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), transparent 70%);
+  display: flex;
+  align-items: center;
+  padding: 5%;
+}
+
+.hero-content {
+  max-width: 600px;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.hero-content ul {
+  margin-left: 20px;
+  margin-bottom: 30px;
+  list-style: disc;
+}
+
+.hero-content li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.hero-btn {
+  background-color: #0d6efd;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.hero-btn:hover {
+  background-color: #084298;
+}
+
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  z-index: 3;
+  transition: background 0.3s;
+}
+
+.nav-arrow:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.nav-arrow.left { left: 20px; }
+.nav-arrow.right { right: 20px; }
+
+.dots-indicator {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  z-index: 3;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+.dot.active {
+  background: white;
+}
+
+/* Home Info Section */
+.home-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+.home-left {
+  max-width: 45%;
+}
+
+.home-left h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.select-series {
+  padding: 12px 24px;
+  background-color: #0066b2;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.select-series:hover {
+  background-color: #00508f;
+}
+
+.disclaimer {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.home-right {
+  max-width: 50%;
+  text-align: right;
+}
+
+.car-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.build-info {
+  background-color: #e9e9e9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.build-info strong {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.build-btn {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #ff6e40;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.build-btn:hover {
+  background-color: #e65d36;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .home-left,
+  .home-right {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .home-left h1 {
+    font-size: 2.5rem;
+  }
+
+  .select-series, .build-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* /////////////////////// */
+
+/* Heart of Joy Section */
+.heart-of-joy-section {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding: 80px 50px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.heart-of-joy-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 70% 30%, rgba(0, 102, 204, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.heart-of-joy-content {
+  flex: 1;
+  max-width: 600px;
+  padding-right: 50px;
+  animation: fadeInLeft 1s ease-out;
+}
+
+.heart-of-joy-content .subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #00aaff;
+  margin-bottom: 20px;
+  position: relative;
+  padding-left: 30px;
+}
+
+.heart-of-joy-content .subtitle::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, #0066cc, #00aaff);
+}
+
+.heart-of-joy-content .title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 40px;
+  background: linear-gradient(45deg, #ffffff 0%, #e0e0e0 50%, #ffffff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  animation: textGlow 3s ease-in-out infinite alternate;
+}
+
+.heart-of-joy-content .title br {
+  display: block;
+}
+
+.read-more-btn {
+  background: linear-gradient(45deg, #0066cc, #00aaff);
+  color: white;
+  border: none;
+  padding: 18px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3);
+}
+
+.read-more-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.read-more-btn:hover::before {
+  left: 100%;
+}
+
+.read-more-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 102, 204, 0.4);
+  background: linear-gradient(45deg, #0052a3, #0088cc);
+}
+
+.read-more-btn:active {
+  transform: translateY(-1px);
+}
+
+.heart-of-joy-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: fadeInRight 1s ease-out;
+}
+
+.heart-of-joy-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  transition: all 0.6s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.heart-of-joy-image::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle, rgba(0, 170, 255, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: pulse 4s ease-in-out infinite;
+  z-index: 1;
+}
+
+.heart-of-joy-image:hover img {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 25px 80px rgba(0, 102, 204, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .heart-of-joy-section {
+    padding: 60px 40px;
+  }
+  
+  .heart-of-joy-content .title {
+    font-size: 3rem;
+  }
+  
+  .heart-of-joy-content {
+    padding-right: 30px;
+  }
+}
+
+@media (max-width: 992px) {
+  .heart-of-joy-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 30px;
+  }
+  
+  .heart-of-joy-content {
+    padding-right: 0;
+    margin-bottom: 50px;
+    max-width: 100%;
+  }
+  
+  .heart-of-joy-content .title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+  }
+  
+  .heart-of-joy-content .subtitle {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding-left: 0;
+  }
+  
+  .heart-of-joy-content .subtitle::before {
+    position: relative;
+    margin-right: 10px;
+    left: auto;
+    top: auto;
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .heart-of-joy-section {
+    padding: 40px 20px;
+    min-height: auto;
+  }
+  
+  .heart-of-joy-content .title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+  
+  .heart-of-joy-content .subtitle {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+  
+  .read-more-btn {
+    padding: 15px 30px;
+    font-size: 14px;
+  }
+  
+  .heart-of-joy-image {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heart-of-joy-content .title {
+    font-size: 1.8rem;
+  }
+  
+  .heart-of-joy-content .title br {
+    display: none;
+  }
+  
+  .read-more-btn {
+    padding: 12px 25px;
+    font-size: 13px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes textGlow {
+  from {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+  }
+  to {
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.3), 0 0 40px rgba(0, 170, 255, 0.2);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+/* Scroll Animation Triggers */
+.heart-of-joy-section.animate-in .heart-of-joy-content {
+  animation: fadeInLeft 1s ease-out;
+}
+
+.heart-of-joy-section.animate-in .heart-of-joy-image {
+  animation: fadeInRight 1s ease-out 0.3s both;
+}
+
+/* Dark Theme Variants */
+.heart-of-joy-section.dark-theme {
+  background: linear-gradient(135deg, #000000 0%, #111111 50%, #000000 100%);
+}
+
+.heart-of-joy-section.light-theme {
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f8f9fa 100%);
+  color: #333;
+}
+
+.heart-of-joy-section.light-theme .heart-of-joy-content .title {
+  background: linear-gradient(45deg, #333333 0%, #666666 50%, #333333 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heart-of-joy-section.light-theme .heart-of-joy-content .subtitle {
+  color: #0066cc;
+}
+
+
+/* ////////////////////// */
+
+.bmw-expert-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+  color: #fff;
+  padding: 3rem 2rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.bmw-expert-image {
+  flex: 1 1 300px;
+  text-align: center;
+}
+
+.bmw-expert-image img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  filter: brightness(0.95) contrast(1.1);
+  transition: transform 0.3s ease;
+}
+
+.bmw-expert-image img:hover {
+  transform: scale(1.05);
+}
+
+.bmw-expert-content {
+  flex: 1 1 400px;
+  text-align: left;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.bmw-expert-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.bmw-link {
+  font-size: 1.1rem;
+  color: #007aff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.bmw-link .arrow {
+  font-size: 1.5rem;
+  transition: transform 0.3s;
+}
+
+.bmw-link:hover {
+  color: #3399ff;
+}
+
+.bmw-link:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bmw-expert-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bmw-expert-content {
+    text-align: center;
+  }
+
+  .bmw-link {
+    justify-content: center;
+  }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+/* ///////////////////// */
+
+
+/* Base container */
+.bmw-models-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background-color: #f5f5f5;
+}
+
+.bmw-card {
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.bmw-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent);
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.model-title {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.model-heading {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.learn-more {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #ffffff;
+  color: #000;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.learn-more:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .bmw-models-section {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+  }
+
+  .bmw-card {
+    height: 300px;
+  }
+
+  .model-heading {
+    font-size: 1.5rem;
+  }
+
+  .learn-more {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+
+
+/* ///////////////////// */
+
+/* BMW Builder Section */
+.bmw-builder-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.bmw-builder-section h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.bmw-builder-cars {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.bmw-model {
+  width: 280px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.bmw-model:hover {
+  transform: translateY(-5px);
+}
+
+.bmw-model img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  transition: all 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  transform-origin: center bottom;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.bmw-model:hover img {
+  transform: scale(1.05);
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.15));
+}
+
+.bmw-model p {
+  margin: 15px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+.start-designing {
+  display: inline-block;
+  padding: 8px 20px;
+  background-color: #0066b1; /* BMW blue */
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.start-designing:hover {
+  background-color: #004a80;
+  transform: scale(1.05);
+}
+
+.build-own-btn {
+  padding: 12px 30px;
+  background-color: transparent;
+  color: #0066b1;
+  border: 2px solid #0066b1;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.build-own-btn:hover {
+  background-color: #0066b1;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 102, 177, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bmw-builder-section h2 {
+    font-size: 24px;
+  }
+  
+  .bmw-model {
+    width: 220px;
+  }
+  
+  .bmw-model img {
+    height: 120px;
+  }
+}
+
+
+
+
+/* ////////////// */
+
+
+
+/* BMW Builder Section - Premium Version */
+.bmw-builder-section {
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, #f9f9f9 0%, #ffffff 100%);
+  text-align: center;
+  font-family: 'BMWTypeNext', 'Helvetica Neue', sans-serif;
+}
+
+.bmw-builder-section h2 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #1c1c1c;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+}
+
+.bmw-builder-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #0066b1; /* BMW blue */
+}
+
+/* Car Model Grid - Premium Layout */
+.bmw-builder-cars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+  margin: 0 auto 4rem;
+  max-width: 1200px;
+}
+
+/* Individual Car Model - Enhanced Card */
+.bmw-model {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.bmw-model:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(0, 102, 177, 0.15);
+}
+
+/* Image Container with Hover Effect */
+.bmw-model img {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: center 80%;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+  margin-bottom: 1.5rem;
+}
+
+.bmw-model:hover img {
+  transform: scale(1.08) translateY(-5px);
+  filter: drop-shadow(0 10px 25px rgba(0, 0, 0, 0.2));
+}
+
+.bmw-model p {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 1rem 0 1.5rem;
+  color: #1a1a1a;
+}
+
+/* Start Designing Button - BMW Style */
+.start-designing {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  background-color: #0066b1;
+  color: white;
+  border-radius: 30px;
+  font-size: 0.95rem;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.start-designing:hover {
+  background-color: #004b87;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 102, 177, 0.3);
+}
+
+/* Main CTA Button - BMW Accent */
+.build-own-btn {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+  background-color: #0066b1;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  box-shadow: 0 5px 20px rgba(0, 102, 177, 0.2);
+}
+
+.build-own-btn:hover {
+  background-color: #004b87;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 102, 177, 0.3);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .bmw-builder-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .bmw-builder-section h2 {
+    font-size: 2rem;
+  }
+  
+  .bmw-builder-cars {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .bmw-model {
+    padding: 1.5rem;
+  }
+  
+  .bmw-model img {
+    height: 140px;
+  }
+}
+
+
+
+/* ////////////////////// */
+
+/* Base Container */
+.ownership-section {
+  padding: 5rem 2rem;
+  background-color: #f4f4f4;
+  text-align: center;
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  color: #111;
+}
+
+.ownership-section h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+/* Grid Layout */
+.ownership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+}
+
+/* Individual Card */
+.ownership-card {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ownership-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon Style */
+.ownership-card .icon {
+  font-size: 2.5rem;
+  color: #0071e3;
+}
+
+/* Title */
+.ownership-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0;
+  color: #111;
+}
+
+/* Description */
+.ownership-card p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Link */
+.ownership-card a {
+  margin-top: auto;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #0071e3;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.ownership-card a:hover {
+  color: #004c9c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ownership-section h2 {
+    font-size: 2rem;
+  }
+
+  .ownership-card {
+    padding: 1.5rem;
+  }
+
+  .ownership-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .ownership-card p {
+    font-size: 0.95rem;
+  }
+
+  .ownership-card .icon {
+    font-size: 2rem;
+  }
+}
+
+
+

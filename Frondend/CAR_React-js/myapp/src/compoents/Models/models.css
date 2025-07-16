@@ -1,0 +1,650 @@
+/* BMW Models - World-Class Premium CSS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: radial-gradient(ellipse at top, #0a0a0a 0%, #1a1a1a 50%, #000000 100%);
+  color: #ffffff;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Hero Section - Models Container */
+.models-container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 2rem;
+  background: 
+    linear-gradient(135deg, rgba(25, 118, 210, 0.1) 0%, rgba(33, 150, 243, 0.05) 50%, transparent 100%),
+    radial-gradient(circle at 30% 20%, rgba(25, 118, 210, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(63, 81, 181, 0.1) 0%, transparent 50%);
+  overflow: hidden;
+}
+
+.models-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>') repeat;
+  animation: gridMove 20s linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes gridMove {
+  0% { transform: translateX(0) translateY(0); }
+  100% { transform: translateX(10px) translateY(10px); }
+}
+
+.models-title {
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  font-weight: 900;
+  background: linear-gradient(135deg, #ffffff 0%, #64b5f6 30%, #1976d2 60%, #0d47a1 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: -0.02em;
+  position: relative;
+  z-index: 2;
+  animation: titleReveal 2s ease-out;
+}
+
+@keyframes titleReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+    filter: blur(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.models-title::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent 0%, #1976d2 50%, transparent 100%);
+  border-radius: 2px;
+  animation: lineGrow 1.5s ease-out 1s both;
+}
+
+@keyframes lineGrow {
+  0% { width: 0; opacity: 0; }
+  100% { width: 200px; opacity: 1; }
+}
+
+.models-description {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 900px;
+  text-align: center;
+  line-height: 1.8;
+  font-weight: 400;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 1.5s ease-out 0.5s both;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Models Grid Section */
+.model-container {
+  padding: 8rem 2rem 5rem;
+  position: relative;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 0%, rgba(10, 10, 10, 0.95) 100%);
+}
+
+.model-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(25, 118, 210, 0.5) 50%, transparent 100%);
+}
+
+.model-title {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #64b5f6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+}
+
+.model-title::before {
+  content: 'MODELS';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, rgba(25, 118, 210, 0.1) 0%, rgba(100, 181, 246, 0.1) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: blur(2px);
+  z-index: -1;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+  0% { transform: translateX(-50%) scale(1); }
+  100% { transform: translateX(-50%) scale(1.02); }
+}
+
+/* Grid Layout */
+.model-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 3rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Individual Model Cards */
+.model-card {
+  position: relative;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  padding: 2rem;
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  transform-origin: center;
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.model-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #1976d2 0%, #64b5f6 50%, #42a5f5 100%);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.model-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(25, 118, 210, 0.1) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.model-card:hover::before {
+  transform: scaleX(1);
+}
+
+.model-card:hover::after {
+  opacity: 1;
+}
+
+.model-card:hover {
+  transform: translateY(-20px) scale(1.02);
+  box-shadow: 
+    0 40px 80px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.15),
+    0 0 100px rgba(25, 118, 210, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.04) 100%);
+}
+
+/* Car Image */
+.car-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  filter: brightness(0.9) contrast(1.1) saturate(1.2);
+}
+
+.model-card:hover .car-image {
+  transform: scale(1.05);
+  filter: brightness(1) contrast(1.2) saturate(1.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Car Information */
+.car-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.car-type,
+.car-Engine,
+.car-Power,
+.car-Torque,
+.car-Mileage {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.8rem;
+  position: relative;
+  padding-left: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.car-type::before,
+.car-Engine::before,
+.car-Power::before,
+.car-Torque::before,
+.car-Mileage::before {
+  content: '▶';
+  position: absolute;
+  left: 0;
+  color: #64b5f6;
+  font-size: 0.8rem;
+  transition: all 0.3s ease;
+}
+
+.model-card:hover .car-type,
+.model-card:hover .car-Engine,
+.model-card:hover .car-Power,
+.model-card:hover .car-Torque,
+.model-card:hover .car-Mileage {
+  color: rgba(255, 255, 255, 0.95);
+  transform: translateX(5px);
+}
+
+.car-price {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #64b5f6;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+  background: linear-gradient(135deg, #64b5f6 0%, #1976d2 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 2rem;
+  animation: modalFadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalFadeIn {
+  0% {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    backdrop-filter: blur(20px);
+  }
+}
+
+.modal-content {
+  background: linear-gradient(145deg, rgba(15, 15, 15, 0.95) 0%, rgba(25, 25, 25, 0.95) 100%);
+  backdrop-filter: blur(40px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 32px;
+  padding: 3rem;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 
+    0 50px 100px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  animation: modalSlideIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.close-button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.close-button:hover {
+  background: rgba(255, 71, 87, 0.2);
+  border-color: rgba(255, 71, 87, 0.5);
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 10px 30px rgba(255, 71, 87, 0.3);
+}
+
+.big-car-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 24px;
+  margin-bottom: 2rem;
+  filter: brightness(1) contrast(1.2) saturate(1.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.modal-info {
+  display: grid;
+  gap: 1rem;
+}
+
+.modal-name {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, #64b5f6 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.modal-type,
+.modal-Engine,
+.modal-Power,
+.modal-Torque,
+.modal-Mileage {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border-left: 4px solid #64b5f6;
+  transition: all 0.3s ease;
+}
+
+.modal-type:hover,
+.modal-Engine:hover,
+.modal-Power:hover,
+.modal-Torque:hover,
+.modal-Mileage:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(5px);
+}
+
+.modal-price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #64b5f6;
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: rgba(100, 181, 246, 0.1);
+  border-radius: 16px;
+  border: 1px solid rgba(100, 181, 246, 0.2);
+}
+
+/* Modal Actions */
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.modal-btn {
+  flex: 1;
+  min-width: 200px;
+  padding: 1.2rem 2rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.modal-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.modal-btn:hover::before {
+  left: 100%;
+}
+
+.modal-btn:hover {
+  transform: translateY(-3px);
+  border-color: rgba(100, 181, 246, 0.5);
+  background: rgba(100, 181, 246, 0.15);
+  box-shadow: 0 15px 40px rgba(100, 181, 246, 0.2);
+}
+
+.modal-btn.primary {
+  background: linear-gradient(135deg, #1976d2 0%, #64b5f6 100%);
+  border-color: transparent;
+  color: #ffffff;
+}
+
+.modal-btn.primary:hover {
+  background: linear-gradient(135deg, #1565c0 0%, #42a5f5 100%);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(25, 118, 210, 0.4);
+}
+
+/* Custom Scrollbar */
+.modal-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1976d2, #64b5f6);
+  border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #1565c0, #42a5f5);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .model-grid {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .models-container {
+    padding: 3rem 1rem;
+    min-height: 80vh;
+  }
+  
+  .model-container {
+    padding: 5rem 1rem 3rem;
+  }
+  
+  .model-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .model-card {
+    padding: 1.5rem;
+    border-radius: 20px;
+  }
+  
+  .modal-content {
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 24px;
+  }
+  
+  .modal-actions {
+    flex-direction: column;
+  }
+  
+  .modal-btn {
+    min-width: auto;
+  }
+  
+  .car-image,
+  .big-car-image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .models-title {
+    font-size: 2.5rem;
+  }
+  
+  .models-description {
+    font-size: 1rem;
+  }
+  
+  .model-title {
+    font-size: 2.5rem;
+  }
+  
+  .modal-content {
+    padding: 1.5rem;
+  }
+  
+  .modal-name {
+    font-size: 2rem;
+  }
+  
+  .close-button {
+    width: 40px;
+    height: 40px;
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+}
+
+/* Performance Optimizations */
+.model-card,
+.modal-btn,
+.close-button {
+  will-change: transform;
+}
+
+.car-image,
+.big-car-image {
+  will-change: transform, filter;
+}
+
+/* Selection Styling */
+::selection {
+  background: rgba(25, 118, 210, 0.3);
+  color: white;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .modal-overlay {
+    display: none;
+  }
+}

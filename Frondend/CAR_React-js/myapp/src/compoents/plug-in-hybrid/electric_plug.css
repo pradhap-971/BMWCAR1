@@ -1,0 +1,1172 @@
+/* Base Styles with CSS Variables */
+.plug-showcase {
+  background-color: #e6f3ff; /* light blue */
+  padding: 4rem 2rem;
+  color: #111; /* changed to dark black-ish */
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+.showcase-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.showcase-header h1 {
+  font-size: 2.5rem;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  position: relative;
+}
+
+.showcase-header h1::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(to right, #007aff, #00c6ff);
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+.vehicles-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.vehicle-card {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(0, 122, 255, 0.15);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 30px rgba(0, 122, 255, 0.25);
+}
+
+.vehicle-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vehicle-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.vehicle-details {
+  padding: 1.5rem;
+}
+
+.vehicle-name {
+  font-size: 1.3rem;
+  color: #111; /* changed from white */
+  margin-bottom: 0.5rem;
+}
+
+.vehicle-price {
+  font-size: 1rem;
+  color: #333; /* changed from #dcdcdc */
+  margin-bottom: 1.2rem;
+  line-height: 1.4;
+}
+
+.vehicle-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.action-button {
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: #111;
+}
+
+.learn-more {
+  background-color: #007aff;
+  color: white;
+}
+
+.learn-more:hover {
+  background-color: #005fcc;
+}
+
+.build-own {
+  background-color: transparent;
+  border: 2px solid #007aff;
+  color: #007aff;
+}
+
+.build-own:hover {
+  background-color: #007aff;
+  color: white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .vehicle-details {
+    padding: 1rem;
+  }
+
+  .vehicle-name {
+    font-size: 1.1rem;
+  }
+
+  .vehicle-price {
+    font-size: 0.9rem;
+  }
+
+  .action-button {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+
+
+/* ////////////////////////// */
+
+/* Base Styles with CSS Variables */
+:root {
+  --bmw-blue: #0066b1;
+  --bmw-white: #ffffff;
+  --bmw-black: #1a1a1a;
+  --bmw-gray-light: #f8f8f8;
+  --bmw-gray-dark: #333333;
+  --transition-speed: 0.4s;
+  --section-spacing: 4rem;
+}
+
+/* Reset and Base Styles */
+.lifestyle-section {
+  font-family: 'BMWTypeNext', 'Arial Narrow', Arial, sans-serif;
+  background-color: var(--bmw-white);
+  color: var(--bmw-black);
+  padding: var(--section-spacing) 0;
+}
+
+.lifestyle-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+/* Text Content Styles */
+.text-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--bmw-blue);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--bmw-black);
+}
+
+.section-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--bmw-gray-dark);
+  margin-bottom: 2rem;
+  max-width: 90%;
+}
+
+/* Image Content Styles */
+.image-content {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  aspect-ratio: 16/9;
+}
+
+.lifestyle-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.image-content:hover .lifestyle-image {
+  transform: scale(1.05);
+}
+
+/* Decorative Elements */
+.image-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 102, 177, 0.1) 0%,
+    rgba(0, 102, 177, 0) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-content > * {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.section-label { animation-delay: 0.1s; }
+.section-title { animation-delay: 0.2s; }
+.section-description { animation-delay: 0.3s; }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .lifestyle-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .section-description {
+    max-width: 100%;
+  }
+  
+  .image-content {
+    order: -1;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .lifestyle-section {
+    padding: calc(var(--section-spacing) / 2) 0;
+  }
+  
+  .lifestyle-content {
+    padding: 0 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.6rem;
+  }
+  
+  .section-description {
+    font-size: 1rem;
+  }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  .text-content > * {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .lifestyle-image {
+    transition: none;
+  }
+}
+
+
+/* //////////////////// */
+
+/* Base Styles with CSS Variables */
+.features-section {
+  background-color: #f9f9f9; /* light white */
+  padding: 4rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #111;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #007aff; /* BMW blue */
+}
+
+.feature-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #111;
+}
+
+.feature-description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .features-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .feature-title {
+    font-size: 1.2rem;
+  }
+
+  .feature-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-section {
+    padding: 2rem 1rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+}
+
+
+/* ////////////////// */
+
+/* Base Styles with CSS Variables */
+.digital-features-section {
+  background-color: #e6f3ff; /* light blue */
+  padding: 4rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #111;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #111;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(to right, #007aff, #00c6ff);
+  margin: 1rem auto 0;
+  border-radius: 2px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 20px rgba(0, 122, 255, 0.08);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgba(0, 122, 255, 0.15);
+}
+
+.feature-icon-container {
+  background-color: #d6ebff;
+  color: #007aff;
+  font-size: 2rem;
+  padding: 1rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+}
+
+.feature-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: #111;
+}
+
+.feature-description {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .feature-title {
+    font-size: 1.2rem;
+  }
+
+  .feature-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .digital-features-section {
+    padding: 2rem 1rem;
+  }
+
+  .feature-card {
+    padding: 1.5rem;
+  }
+
+  .feature-icon-container {
+    width: 56px;
+    height: 56px;
+    font-size: 1.6rem;
+  }
+}
+
+
+/* ///////////////////// */
+
+/* Base Styles with CSS Variables */
+:root {
+  --bmw-blue: #0066b1;
+  --bmw-blue-dark: #004a80;
+  --bmw-white: #ffffff;
+  --bmw-black: #1a1a1a;
+  --bmw-gray-light: #f5f5f5;
+  --section-spacing: 5rem;
+  --border-radius: 8px;
+}
+
+/* Reset and Base Styles */
+.charging-section {
+  font-family: 'BMWTypeNext', 'Arial Narrow', Arial, sans-serif;
+  background-color: var(--bmw-gray-light);
+  padding: var(--section-spacing) 0;
+}
+
+.charging-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 0 2rem;
+}
+
+.charging-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.charging-image {
+  flex: 1;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.charging-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.charging-image:hover img {
+  transform: scale(1.03);
+}
+
+/* Typography */
+.charging-title {
+  font-size: clamp(2rem, 4vw, 2.5rem);
+  font-weight: 600;
+  color: var(--bmw-black);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.charging-icon {
+  font-size: 1.5em;
+  animation: pulse 2s infinite;
+}
+
+.charging-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--bmw-black);
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+/* CTA Buttons */
+.charging-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 0.9rem 1.8rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.primary {
+  background-color: var(--bmw-blue);
+  color: var(--bmw-white);
+}
+
+.primary:hover {
+  background-color: var(--bmw-blue-dark);
+  transform: translateY(-2px);
+}
+
+.secondary {
+  background-color: transparent;
+  color: var(--bmw-blue);
+  border: 2px solid var(--bmw-blue);
+}
+
+.secondary:hover {
+  background-color: rgba(0, 102, 177, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.charging-content > * {
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.charging-title { animation-delay: 0.1s; }
+.charging-description { animation-delay: 0.2s; }
+.charging-cta { animation-delay: 0.3s; }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .charging-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .charging-content {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .charging-title {
+    justify-content: center;
+  }
+  
+  .charging-cta {
+    justify-content: center;
+  }
+  
+  .charging-image {
+    max-width: 600px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .charging-section {
+    padding: 3rem 0;
+  }
+  
+  .charging-container {
+    padding: 0 1.5rem;
+  }
+  
+  .charging-description {
+    font-size: 1rem;
+  }
+  
+  .cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .charging-cta {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .cta-button {
+    width: 100%;
+  }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  .charging-icon {
+    animation: none;
+  }
+  
+  .charging-content > * {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .charging-image img,
+  .cta-button {
+    transition: none;
+  }
+}
+
+/* ////////////////////// */
+
+/* Premium Charging Section Styles */
+.charging-section {
+  background-color: #f9f9f9; /* light white */
+  color: #111;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 4rem 2rem;
+}
+
+.charging-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.charging-content {
+  flex: 1 1 500px;
+  max-width: 600px;
+}
+
+.charging-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #111;
+}
+
+.charging-icon {
+  font-size: 1.5rem;
+  color: #007aff;
+}
+
+.charging-description {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.charging-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cta-button {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button.primary {
+  background-color: #007aff;
+  color: white;
+}
+
+.cta-button.primary:hover {
+  background-color: #005fcc;
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  border: 2px solid #007aff;
+  color: #007aff;
+}
+
+.cta-button.secondary:hover {
+  background-color: #007aff;
+  color: white;
+}
+
+.charging-image {
+  flex: 1 1 400px;
+  display: flex;
+  justify-content: center;
+}
+
+.charging-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .charging-container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .charging-title {
+    justify-content: center;
+  }
+
+  .charging-cta {
+    justify-content: center;
+  }
+
+  .charging-content {
+    max-width: 100%;
+  }
+}
+
+
+
+
+/* ///////////////////////////// */
+
+ 
+.electric-container1 {
+  background-color: #e6f3ff; /* light blue */
+  padding: 4rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  color: #111;
+}
+
+.charging-section1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.charging-box1 {
+  background-color: #ffffff;
+  border: 2px solid #007aff;
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 122, 255, 0.08);
+  position: relative;
+}
+
+.charging-box1:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 
+    0 0 0 4px rgba(0, 122, 255, 0.15),
+    0 12px 24px rgba(0, 122, 255, 0.2),
+    inset 0 0 12px rgba(0, 122, 255, 0.15);
+  border-color: #005fcc;
+}
+
+.charging-box1 img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.charging-box1:hover img {
+  transform: scale(0.98);
+}
+
+.charging-box1 h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #111;
+}
+
+.charging-box1 p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .electric-container1 {
+    padding: 2rem 1rem;
+  }
+
+  .charging-box1 {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .charging-box1 h4 {
+    font-size: 1.15rem;
+  }
+
+  .charging-box1 p {
+    font-size: 0.95rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ///////////////////// */
+
+
+/* Base Styles with CSS Variables */
+:root {
+  --bmw-blue: #0066b1;
+  --bmw-blue-dark: #004a80;
+  --bmw-green: #00a859;
+  --bmw-white: #ffffff;
+  --bmw-black: #1a1a1a;
+  --bmw-gray: #f5f5f5;
+  --bmw-gray-dark: #333333;
+  --section-spacing: 5rem;
+  --border-radius: 12px;
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset and Base Styles */
+.chargeforward-section {
+  font-family: 'BMWTypeNext', 'Arial Narrow', Arial, sans-serif;
+  background-color: var(--bmw-white);
+  color: var(--bmw-black);
+  padding: var(--section-spacing) 0;
+}
+
+.chargeforward-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding: 0 2rem;
+}
+
+.chargeforward-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.chargeforward-visual {
+  flex: 1;
+  position: relative;
+}
+
+.visual-container {
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+}
+
+.app-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.visual-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 168, 89, 0.1) 0%,
+    rgba(0, 102, 177, 0.1) 100%
+  );
+}
+
+.visual-container:hover .app-image {
+  transform: scale(1.03);
+}
+
+/* Typography */
+.chargeforward-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: var(--bmw-black);
+}
+
+.highlight {
+  color: var(--bmw-green);
+}
+
+.chargeforward-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--bmw-gray-dark);
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+}
+
+/* Features Grid */
+.chargeforward-features {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  background: var(--bmw-gray);
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+}
+
+.feature-icon {
+  font-size: 1.2rem;
+}
+
+/* Learn More Link */
+.learn-more-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--bmw-blue);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+}
+
+.learn-more-link:hover {
+  color: var(--bmw-blue-dark);
+}
+
+.learn-more-link:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.chargeforward-content > * {
+  animation: fadeInLeft 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.chargeforward-title { animation-delay: 0.1s; }
+.chargeforward-description { animation-delay: 0.2s; }
+.chargeforward-features { animation-delay: 0.3s; }
+.learn-more-link { animation-delay: 0.4s; }
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .chargeforward-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .chargeforward-content {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .chargeforward-features {
+    justify-content: center;
+  }
+  
+  .chargeforward-visual {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .chargeforward-section {
+    padding: 3rem 0;
+  }
+  
+  .chargeforward-container {
+    padding: 0 1.5rem;
+  }
+  
+  .chargeforward-description {
+    font-size: 1rem;
+  }
+  
+  .feature {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .chargeforward-features {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .feature {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  .chargeforward-content > * {
+    animation: none;
+    opacity: 1;
+  }
+  
+  .visual-container .app-image,
+  .learn-more-link .arrow {
+    transition: none;
+  }
+}
